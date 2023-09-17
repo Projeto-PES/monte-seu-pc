@@ -14,4 +14,4 @@ DCA0207 - BANCO DE DADOS - T01 (2023.2).
     - https://www.studiopc.com.br/monte-seu-computador  
 
 ### Diagrama de caso de uso:
-[Imagem do diagrama](DiagramaUseCase.jpeg)
+![Imagem do diagrama](DiagramaUseCase.jpeg)
