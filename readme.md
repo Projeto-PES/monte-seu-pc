@@ -3,7 +3,7 @@
 Projeto das matérias DCA0205 - PROJETO E ENGENHARIA DE SOFTWARE e 
 DCA0207 - BANCO DE DADOS - T01 (2023.2).
 
-Sites de referência:
+### Sites de referência:
 * Agregadores:
     - https://meupc.net/build <-- esse aqui acaba sendo muito próx. da ideia
 * Comércios:
@@ -12,3 +12,6 @@ Sites de referência:
     - https://www.terabyteshop.com.br/pc-gamer/full-custom
     - https://chipart.dooca.store/monte-seu-computador
     - https://www.studiopc.com.br/monte-seu-computador  
+
+### Diagrama de caso de uso:
+[Imagem do diagrama](DiagramaUseCase.jpeg)
