@@ -16,9 +16,6 @@ DCA0207 - BANCO DE DADOS - T01 (2023.2).
 ### Diagrama de caso de uso:
 ![Imagem do diagrama](DiagramaUseCase.jpg)
 ```mermaid
----
-title: Monte-seu-pc MER
----
 erDiagram;
     USUARIO ||..|{ COMPUTADOR : MONTA;
     USUARIO{;
