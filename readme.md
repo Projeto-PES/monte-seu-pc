@@ -19,22 +19,22 @@ DCA0207 - BANCO DE DADOS - T01 (2023.2).
 ---
 title: Monte-seu-pc MER
 ---
-erDiagram
-    USUARIO ||..|{ COMPUTADOR : MONTA
-    USUARIO{
-        LOGIN login
-        bool ehADMIN
-    }
-    COMPUTADOR }o--o{ PECAS : POSSUI
-    COMPUTADOR{
-        int id
-        string nome
-        LOGIN dono
-    }
-    PECAS }o--o{ PECAS : INCOMPATIBILIDADE
-    PECAS{
-        string nome
-        string marca
-        string[] propriedades
-    }
+erDiagram;
+    USUARIO ||..|{ COMPUTADOR : MONTA;
+    USUARIO{;
+        LOGIN login;
+        bool ehADMIN;
+    };
+    COMPUTADOR }o--o{ PECAS : POSSUI;
+    COMPUTADOR{;
+        int id;
+        string nome;
+        LOGIN dono;
+    };
+    PECAS }o--o{ PECAS : INCOMPATIBILIDADE;
+    PECAS{;
+        string nome;
+        string marca;
+        string[] propriedades;
+    };
 ```
