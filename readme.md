@@ -16,22 +16,22 @@ DCA0207 - BANCO DE DADOS - T01 (2023.2).
 ### Diagrama de caso de uso:
 ![Imagem do diagrama](DiagramaUseCase.jpg)
 ```mermaid
-erDiagram;
-    USUARIO ||..|{ COMPUTADOR : MONTA;
-    USUARIO{;
-        LOGIN login;
-        bool ehADMIN;
-    };
-    COMPUTADOR }o--o{ PECAS : POSSUI;
-    COMPUTADOR{;
-        int id;
-        string nome;
-        LOGIN dono;
-    };
-    PECAS }o--o{ PECAS : INCOMPATIBILIDADE;
-    PECAS{;
-        string nome;
-        string marca;
-        string[] propriedades;
-    };
+erDiagram
+    USUARIO ||..|{ COMPUTADOR : MONTA
+    USUARIO{
+        LOGIN login
+        bool ehADMIN
+    }
+    COMPUTADOR }o--o{ PECAS : POSSUI
+    COMPUTADOR{
+        int id
+        string nome
+        LOGIN dono
+    }
+    PECAS }o--o{ PECAS : INCOMPATIBILIDADE
+    PECAS{
+        string nome
+        string marca
+        string[] propriedades
+    }
 ```
