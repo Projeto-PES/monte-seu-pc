@@ -1,3 +1,12 @@
+### Funcionalidades
+- Lista de seleção com dois ou três modelos de componentes.
+
+- Teste de compatibilidade em função apenas da potência total com relação a fonte.
+
+- Avaliação das peças usando estrelinhas.
+
+- Guardar peças selecionadas na URL (Salavamento/Compartilhamento)
+
 ### Setup:
 ```sh
 cd prot
