@@ -9,7 +9,9 @@ export const Home = () => {
         </Link>
       </div>
       <div className="container-login-form-button">
-        <button className="login-form-button">Montar PC</button>
+        <Link className="text-center" to="/build">
+          <button className="login-form-button">Montar PC</button>
+        </Link>
       </div>
     </div>
   );
