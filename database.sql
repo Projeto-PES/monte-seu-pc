@@ -1,12 +1,15 @@
+DROP DATABASE IF EXISTS MONTE_SEU_PC;
 CREATE DATABASE IF NOT EXISTS MONTE_SEU_PC;
 
 USE MONTE_SEU_PC;
 
 CREATE TABLE IF NOT EXISTS USUARIO (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    -- campos sign up
     email VARCHAR(255) NOT NULL UNIQUE,
+    nome VARCHAR(255) NOT NULL,
     senha BINARY(32) NOT NULL,
-    ruido CHAR(20) NOT NULL UNIQUE,
+    --
     ehAdmin BOOL DEFAULT 0,
     token BINARY(8) UNIQUE,
     sessao TIMESTAMP
@@ -25,6 +28,7 @@ CREATE TABLE IF NOT EXISTS PECAS (
     marca VARCHAR(255) NOT NULL,
     -- Encher este enum depois
     tipo ENUM('Placa-mãe', 'Processador', 'Memória', 'Fonte') NOT NULL,
+    pot INT DEFAULT 0,
     CONSTRAINT nomeComp UNIQUE(nome,marca)
 );
 
@@ -36,8 +40,8 @@ CREATE TABLE IF NOT EXISTS PROPRIEDADE (
 CREATE TABLE IF NOT EXISTS INCOMPAT_PROP (
     prop1 VARCHAR(255),
     prop2 VARCHAR(255),
-    razao VARCHAR(255),
-    nivel ENUM('Aviso', 'Incompatibilidade'),
+    razao VARCHAR(255) DEFAULT '',
+    nivel ENUM('Aviso', 'Incompatibilidade') DEFAULT 'Incompatibilidade',
     PRIMARY KEY (prop1, prop2),
     CHECK(prop1<>prop2),
     FOREIGN KEY (prop1) REFERENCES PROPRIEDADE(nome),
