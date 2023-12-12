@@ -1,10 +1,13 @@
-INSERT INTO USUARIO (email, nome, senha, ehAdmin, token, sessao)
+INSERT INTO USUARIO (email, nome, senha, ruido, ehAdmin, token, sessao)
 VALUES
-    ('teste0@email.com', 'joao', B'00000000000000001111111111111111', 0, B'10101010', NOW()),
-    ('teste2@email.com', 'mari', B'11111111111111110000000000000000', 1, B'11111010', NOW());
+    ('teste1@email.com', 'joao', 'hash de senha1',
+    '11111111111111111111111111111111', 0, B'10101010', NOW()),
+    ('teste2@email.com', 'mari', 'hash de senha2',
+    '22222222222222222222222222222222', 1, B'11111010', NOW());
 
-INSERT INTO USUARIO (email, nome, senha, token, sessao)
-VALUES ('teste3@email.com', 'josé', B'00000000000000001111111111111111', B'10101111', NOW());
+INSERT INTO USUARIO (email, nome, senha, ruido, token, sessao)
+VALUES ('teste3@email.com', 'josé', 'hash de senha3',
+    '33333333333333333333333333333333', B'10101111', NOW());
 
 INSERT INTO COMPUTADORES VALUES
     (1,'pc 1 jose', 1),

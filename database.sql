@@ -8,8 +8,9 @@ CREATE TABLE IF NOT EXISTS USUARIO (
     -- campos sign up
     email VARCHAR(255) NOT NULL UNIQUE,
     nome VARCHAR(255) NOT NULL,
-    senha BINARY(32) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     --
+    ruido CHAR(32) NOT NULL UNIQUE,
     ehAdmin BOOL DEFAULT 0,
     token BINARY(8) UNIQUE,
     sessao TIMESTAMP
@@ -26,6 +27,8 @@ CREATE TABLE IF NOT EXISTS PECAS (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     marca VARCHAR(255) NOT NULL,
+    img VARCHAR(255),
+    aval TINYINT NOT NULL DEFAULT 0,
     -- Encher este enum depois
     tipo ENUM('Placa-mãe', 'Processador', 'Memória', 'Fonte') NOT NULL,
     pot INT DEFAULT 0,

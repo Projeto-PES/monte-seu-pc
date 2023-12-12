@@ -59,6 +59,8 @@ Como esse ponto é mais complexo ele não está definido totalmente em parâmetr
             "id": 1
             "nome": "exemplo1",
             "marca": "exemplo1.1",
+            "img": "exemplo/1.2",
+            "aval": 4,
             "props": [
                 { 
                     "nome": "prop1ex",
@@ -71,6 +73,8 @@ Como esse ponto é mais complexo ele não está definido totalmente em parâmetr
             "id": 2
             "nome": "exemplo2",
             "marca": "exemplo2.1",
+            "img": "exemplo/2.2",
+            "aval": 3,
             "props": [
                 { 
                     "nome": "prop2ex",
