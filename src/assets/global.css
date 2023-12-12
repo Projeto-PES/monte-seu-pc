@@ -1,68 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap');
+
 * {
    margin:0;
    padding: 0;
    box-sizing: border-box;
 }
 
-.container{
-   width: 100%;
-   margin: 0 auto;
-   background-color: #111;
-   padding: 50px;
+body, html {
+   font-family: 'Silkscreen', sans-serif;
 }
 
-.containerlogin{
-   width: 100%;
-   min-height: 100vh;
-
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
-
-   padding: 15px;
-   background: url(../assets/fundo.png) right center no-repeat; 
-   background-color: #111;
-}
-
-.wraplogin{
-   position: absolute;
-   top: 30px; /* Distância em relação ao topo */
-   left: 75px; /* Distância em relação à esquerda */
-
-   width: 420px;
-   background-color: #333;
-   border-radius: 17px;
-
-   overflow: hidden;
-   padding: 77px 55px 33px 55px;
-
-   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
-
-}
-
-.loginform{
+.login-form{
    width: 100%;
 }
 
-.loginformtitle{
+.login-form-title{
    display: block;
    font-size: 25px;
    color: azure;
 
-   line-height: 1.2;
+   line-height: 1.5;
    text-align: center;
 }
 
-.loginformtitle img {
-   width: 300px;
+.login-form-title img {
+   width: 180px;
 }
 
-.wrapinput{
+.wrap-input{
    width: 100%;
    position: relative;
    border-bottom: 2px solid #adadad;
    margin-bottom: 37px;
+   font-size: 20px;
 }
 
 .input {
@@ -79,7 +49,7 @@
    padding: 0 5px;
 }
 
-.focusinput{
+.focus-input{
    position: absolute;
    display: block;
    width: 100%;
@@ -91,7 +61,7 @@
    color: #adadad;
 }
 
-.focusinput::before{
+.focus-input::before{
    content: "";
    display: block;
    position: absolute;
@@ -110,7 +80,7 @@
    background: linear-gradient(to left, #21d4fd, #b721ff);
 }
 
-.focusinput::after{
+.focus-input::after{
    font-size: 15px;
    color: #999999;
    line-height: 1.2;
@@ -134,31 +104,30 @@
    outline: 0;
 }
 
-.input:focus + .focusinput::after{
+.input:focus + .focus-input::after{
    top: -15px;
 }
 
-.input:focus + .focusinput::before{
+.input:focus + .focus-input::before{
    top: 45px;
    width: 100%;
 }
 
 
-.has-val + .focusinput::after{
+.has-val + .focus-input::after{
    top: -15px;
 }
 
 
-
-
-.containerloginformbutton{
+.container-login-form-button{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    padding-bottom: 13px;
 }
 
-.loginformbutton{
+.login-form-button{
+   font-family: 'Silkscreen', sans-serif;
    font-size: 15px;
    border: none;
    border-radius: 10px;
@@ -179,22 +148,22 @@
    background: linear-gradient(to left, #21d4fd, #b721ff);
 }
 
-.loginformbutton:hover{
+.login-form-button:hover{
    cursor: pointer;
 }
 
-.textcenter{
+.text-center{
    display: flex;
    justify-content: center;
    align-items: center;
 
-   margin-top: 50px;
+   margin-top: 40px;
+   margin-left: 18px;
 }
 
 .txt1{
    font-size: 14px;
    color: #adadad;
-   line-height: 1.5;
    padding-right: 5px;
    text-decoration: none;
 }
@@ -202,6 +171,5 @@
 .txt2{
    font-size: 14px;
    color: #6a6dfe;
-   line-height: 1.5;
    text-decoration: none;
 }
