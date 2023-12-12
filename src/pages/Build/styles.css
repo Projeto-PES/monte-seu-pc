@@ -1,9 +1,60 @@
-.container img{
-   width: 150px;
+.container{
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: black; 
 }
 
+.container-selects {
+   position: absolute;
+   top: 50%;
+   left: 22%;
+   transform: translate(-50%, -50%);
+
+   font-size: 13.5px;
+
+   border-radius: 17px;
+   background-color: #333;
+   padding: 125px 25px 65px 25px;
+
+   p{
+   text-align: right;   
+   }
+
+   h1{
+      position: absolute;
+      top: 4%; 
+      font-size: 21px;
+      color: white;
+   }
+
+   img{
+   float: left;
+   width: 70px;
+   height: 70px;
+   }
+}
 
 .select-memory {
-   width: 500px;
-   text-align: center;
+   width: 600px;
+   height: 100px;
+   text-align: left
+}
+
+.select-motherboard {
+   width: 600px;
+   height: 100px;
+   text-align: left;
+}
+
+.select-processor {
+   width: 600px;
+   height: 100px;
+   text-align: left;
+}
+
+.select-powersupply {
+   width: 600px;
+   height: 100px;
+   text-align: left;
 }
