@@ -7,54 +7,41 @@
 
 .container-selects {
    position: absolute;
-   top: 50%;
-   left: 22%;
+   top: 47%;
+   left: 50%;
    transform: translate(-50%, -50%);
 
    font-size: 13.5px;
 
-   border-radius: 17px;
+   border-radius: 15px;
    background-color: #333;
-   padding: 125px 25px 65px 25px;
+   padding: 180px 15px 77px 15px;
 
    p{
-   text-align: right;   
-   }
-
-   h1{
-      position: absolute;
-      top: 4%; 
-      font-size: 21px;
-      color: white;
+      text-align: right;   
    }
 
    img{
-   float: left;
-   width: 70px;
-   height: 70px;
+      float: left;
+      width: 70px;
+      height: 70px;
+   }  
+
+   #imgLogo{
+      position: absolute;
+      top: -8%;
+      left: 27%;
+      width: 48%;
+      height: 38%;
    }
 }
 
-.select-memory {
-   width: 600px;
-   height: 100px;
-   text-align: left
-}
-
-.select-motherboard {
-   width: 600px;
-   height: 100px;
-   text-align: left;
-}
-
-.select-processor {
-   width: 600px;
-   height: 100px;
-   text-align: left;
-}
-
-.select-powersupply {
-   width: 600px;
-   height: 100px;
+.select-control {
+   width: 550px;
+   border: 1px solid #ccc;
+   padding: 8px 10px 80px 10px;
+   height: 80px;
+   background-color: red;
+   border-radius: 13.5px;
    text-align: left;
 }
