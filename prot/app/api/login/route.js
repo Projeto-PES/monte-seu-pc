@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createHash } from "crypto";
-const crypto = require("crypto")
+import { createHash, randomBytes } from "crypto";
 const queryBd = require("@/utils/db")
 
 async function getRuido(email){
@@ -24,7 +23,7 @@ async function genToken(id){
     let done = false;
     while (!done){
     try {
-        token = crypto.randomBytes(16).toString('hex')
+        token = randomBytes(16).toString('hex')
         query = `UPDATE usuario SET token = '${token}', sessao = NOW() WHERE id = '${id}';`
         await queryBd(query)
         done = true
