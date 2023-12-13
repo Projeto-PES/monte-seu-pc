@@ -41,8 +41,34 @@ Ponto de acesso para criação de conta.
 - Já existe uma conta com este e-mail.
 
 ## `/api/pcs`
-É para ser o ponto de acesso para dados de computadores de um usuário.
-Ainda não decidi sobre, aceito recomendações entre fazer um /api/pcs/{user} (não parece muito privado) ou passar o token do usuário para listar.
+Ponto de acesso para listagem dos computadores do usuário.
+
+### Parâmetros de requisição: 
+- `token`: string com o token do usuário (enviado via header).
+
+### Respostas:
+#### `200`:
+- Tudo deu certo.
+- É retornada uma lista com todos os computadores do usuário.
+- Body da resposta:
+```json
+{
+    "pcs": [
+        {
+            "id": 1,
+            "nome": "pcExemplo1"
+        },
+        {
+            "id": 2,
+            "nome": "pcExemplo2"
+        },
+        ...
+    ]
+}
+```
+#### `400`:
+- Token inválido (sessão expirada ou simplesmente um token errado).
+
 
 ## `/api/pecas`
 Como esse ponto é mais complexo ele não está definido totalmente em parâmetros. O retorno é mais fácil de especificar, e será desta forma:
