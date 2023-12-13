@@ -1,13 +1,14 @@
 INSERT INTO USUARIO (email, nome, senha, ruido, ehAdmin, token, sessao)
 VALUES
-    ('teste1@email.com', 'joao', 'hash de senha1',
-    '11111111111111111111111111111111', 0, B'10101010', NOW()),
-    ('teste2@email.com', 'mari', 'hash de senha2',
-    '22222222222222222222222222222222', 1, B'11111010', NOW());
+    -- a senha não encriptada é igual ao ruído
+    ('teste1@email.com', 'joao', '3138bb9bc78df27c473ecfd1410f7bd45ebac1f59cf3ff9cfe4db77aab7aedd3',
+    '11111111111111111111111111111111', 0, '11111111111111111111111111111110', NOW()),
+    ('teste2@email.com', 'mari', '4f2e8d65483c641648cdb374ae9d8abd368d269e4ddffe092a8237b8162cddd6',
+    '22222222222222222222222222222222', 1, '22222222222222222222222222222220', NOW());
 
 INSERT INTO USUARIO (email, nome, senha, ruido, token, sessao)
-VALUES ('teste3@email.com', 'josé', 'hash de senha3',
-    '33333333333333333333333333333333', B'10101111', NOW());
+VALUES ('teste3@email.com', 'josé', '79bd7d7fd684b399857c582b1b7172ddf277d4fe1b027ec52b28da3ae381e675',
+    '33333333333333333333333333333333', '33333333333333333333333333333330', NOW());
 
 INSERT INTO COMPUTADORES VALUES
     (1,'pc 1 jose', 1),

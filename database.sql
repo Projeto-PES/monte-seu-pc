@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS USUARIO (
     -- campos sign up
     email VARCHAR(255) NOT NULL UNIQUE,
     nome VARCHAR(255) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
+    senha CHAR(64) NOT NULL,
     --
     ruido CHAR(32) NOT NULL UNIQUE,
     ehAdmin BOOL DEFAULT 0,
-    token BINARY(8) UNIQUE,
+    token CHAR(32) UNIQUE,
     sessao TIMESTAMP
 );
 

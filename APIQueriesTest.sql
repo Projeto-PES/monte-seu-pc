@@ -14,13 +14,12 @@ FROM usuario
 WHERE usuario.email = '<email>' AND usuario.senha = '<senha>';
 -- 2.2 atualizar token
 UPDATE usuario
-SET usuario.token = '<token>'
-SET usuario.sessao = NOW()
-WHERE usuario.id = '<id>';
+SET token = '<token>', sessao = NOW()
+WHERE id = '<id>';
 -- 2.3 somente renovar sessão
 UPDATE usuario
-SET usuario.sessao = NOW()
-WHERE usuario.id = '<id>';
+SET sessao = NOW()
+WHERE id = '<id>';
 
 -- 3. para pcs
 -- 3.1 listar pcs do usuário

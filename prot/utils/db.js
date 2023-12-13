@@ -13,9 +13,10 @@ async function queryBd(query){
     let conn;
     try {
         conn = await pool.getConnection()
-        return await conn.query(query)
+        return await conn.query({sql: query, timeout: 4000})
     }
     catch (e) {
+        if (e.code == 'ER_GET_CONNECTION_TIMEOUT') {console.log("REINICIA QUE DEU RUIM")}
         throw e
     }
     finally {
