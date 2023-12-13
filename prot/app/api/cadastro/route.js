@@ -45,5 +45,5 @@ export async function POST(req) {
 
     await genUser(bode.nome, bode.email, bode.senha)
 
-    return new Response("", {status: 200})
+    return new Response("{}", {status: 200})
 }
