@@ -1,0 +1,40 @@
+.container-selects {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 13.5px;
+
+  border-radius: 15px;
+  background-color: #333;
+  padding: 180px 15px 77px 15px;
+
+}
+
+.select-control {
+  width: 550px;
+  border: 1px solid #ccc;
+  padding: 8px 10px 80px 10px;
+  height: 80px;
+  background-color: #ca4444;
+  border-radius: 13.5px;
+  text-align: left;
+}
+
+button {
+  width: 80px;
+  height: 40px;
+  margin-top: 30px;
+  background-color: #ca4444;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
