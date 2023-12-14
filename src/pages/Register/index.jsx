@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LayoutComponents } from "../../components/LayoutComponents";
 import { useState } from "react";
 import logoIMG from "../../assets/small-logo.webp";
 
 export const Register = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ export const Register = () => {
         <span className="login-form-title">Criar Conta</span>
 
         <span className="login-form-title">
-          <img src={logoIMG} alt="logoImg" />
+          <img src={logoIMG} alt="logoImg" onClick={() => navigate("/")} />
         </span>
 
         <div className="wrap-input">

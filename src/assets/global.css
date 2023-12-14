@@ -31,6 +31,7 @@ html {
 
 .login-form-title img {
   width: 240px;
+  cursor: pointer;
 }
 
 .wrap-input {
