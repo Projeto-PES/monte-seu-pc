@@ -1,17 +1,23 @@
-import { Link } from "react-router-dom";
+import "./styles.css";
+import { useNavigate } from "react-router-dom";
+import logoIMG from "../../assets/logoIMG.webp";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="text-center">
-      <div className="container-login-form-button">
-        <Link className="txt2" to="/login">
-          <button className="login-form-button">Fazer Login</button>
-        </Link>
+    <div className="container">
+      <div>
+        <img id="imgLogo" src={logoIMG} />
       </div>
-      <div className="container-login-form-button">
-        <Link className="text-center" to="/build">
-          <button className="login-form-button">Montar PC</button>
-        </Link>
+      <div className="buttons-container">
+        <p>O que deseja fazer?</p>
+        <button className="home-button" onClick={() => navigate("/login")}>
+          Login
+        </button>
+        <button className="home-button" onClick={() => navigate("/build")}>
+          Montar PC
+        </button>
       </div>
     </div>
   );
