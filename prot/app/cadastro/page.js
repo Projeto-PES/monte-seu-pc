@@ -7,12 +7,32 @@ const logoIMG = "/logoIMG.webp"
 
 export default function Register(){
    const [email, setEmail] = useState("")
-   const [password, setPassword] = useState("")
-   const [name, setName] = useState("")
+   const [senha, setPassword] = useState("")
+   const [nome, setName] = useState("")
+
+   function handleRegister(e) {
+      e.preventDefault();
+  
+      const data = { nome, email, senha };
+      console.log(JSON.stringify(data));
+  
+      fetch("/api/cadastro", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((respostaJson) => {
+          console.log("Resposta do servidor:", respostaJson);
+          navigate("/login");
+        })
+        .catch((error) => {
+          console.error("Erro ao enviar requisição:", error);
+        });
+    }
 
    return (
       <LayoutComponents>
-         <form className="login-form">
+         <form className="login-form" onSubmit={handleRegister}>
             <span className="login-form-title">Criar Conta</span>
 
             <span className="login-form-title">
@@ -21,9 +41,9 @@ export default function Register(){
 
             <div className="wrap-input">
                <input 
-                  className={name !== "" ? 'has-val input' : 'input'}
+                  className={nome !== "" ? 'has-val input' : 'input'}
                   type="name"
-                  value={name}
+                  value={nome}
                   onChange={e => setName(e.target.value)}
                />
                <span className="focus-input" data-placeholder="Nome"></span>
@@ -41,9 +61,9 @@ export default function Register(){
 
             <div className="wrap-input">
                <input 
-                  className={password !== "" ? 'has-val input' : 'input'}
+                  className={senha !== "" ? 'has-val input' : 'input'}
                   type="password"
-                  value={password}
+                  value={senha}
                   onChange={e => setPassword(e.target.value)}
                />
                <span className="focus-input" data-placeholder="Password"></span>
