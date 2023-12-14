@@ -7,7 +7,27 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [senha, setSenha] = useState("");
+
+  function handleLogin(e) {
+    e.preventDefault();
+
+    const data = { email, senha };
+    console.log(JSON.stringify(data));
+
+    fetch("/api/login", {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((respostaJson) => {
+        console.log("Resposta do servidor:", respostaJson);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar requisição:", error);
+      });
+  }
 
   return (
     <LayoutComponents>
@@ -30,10 +50,10 @@ export const Login = () => {
 
         <div className="wrap-input">
           <input
-            className={password !== "" ? "has-val input" : "input"}
+            className={senha !== "" ? "has-val input" : "input"}
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
           />
           <span className="focus-input" data-placeholder="Password"></span>
         </div>
