@@ -1,4 +1,4 @@
-const queryBd = require("@/utils/db")
+const queryBd = require("../../../utils/db")
 
 const badToken = ()=> new Response(
     JSON.stringify({error: "Token inválido"}), {status: 400, headers: { 'Content-Type': 'application/json' }})

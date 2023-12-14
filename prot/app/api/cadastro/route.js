@@ -1,5 +1,5 @@
 import { createHash, randomBytes } from "crypto";
-const queryBd = require("@/utils/db")
+const queryBd = require("../../../utils/db")
 
 async function getRuido(email){
     let query = `SELECT usuario.ruido FROM usuario WHERE `+

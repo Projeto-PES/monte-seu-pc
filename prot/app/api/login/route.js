@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server'
 import { createHash, randomBytes } from "crypto";
-const queryBd = require("@/utils/db")
+const queryBd = require("../../../utils/db")
+//import {  } from "../../../utils/db";
 
 async function getRuido(email){
     let query = `SELECT usuario.ruido FROM usuario WHERE `+
-    `usuario.email = '${email}';`
+    `usuario.email = '${email}';`   
     return queryBd(query)
 }
 

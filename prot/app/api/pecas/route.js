@@ -1,4 +1,4 @@
-const queryBd = require("@/utils/db")
+const queryBd = require("../../../utils/db")
 
 const tipoInvalido = ()=> new Response(
     JSON.stringify({error: "Tipo inválido"}), {status: 400, headers: { 'Content-Type': 'application/json' }})
