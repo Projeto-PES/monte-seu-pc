@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body,
 html {
   font-family: "Silkscreen", sans-serif;
@@ -26,7 +30,7 @@ html {
 }
 
 .login-form-title img {
-  width: 180px;
+  width: 240px;
 }
 
 .wrap-input {
