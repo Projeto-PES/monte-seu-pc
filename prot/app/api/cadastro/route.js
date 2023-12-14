@@ -33,7 +33,9 @@ const campoVazio = ()=> new Response(
     JSON.stringify({error: "Um ou mais campos não foram preenchidos"}), {status: 400, headers: { 'Content-Type': 'application/json' }})
 
 export async function POST(req) {
-    let bode = await req.json()
+    let bode
+    try {bode = await req.json()}
+    catch {return campoVazio()}
     if (!bode.email || !bode.senha || !bode.nome) {
         return campoVazio()
     }

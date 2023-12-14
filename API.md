@@ -76,15 +76,22 @@ Ponto de acesso para as peças, filtradas pela compatibilidade com propriedades.
 
 ### Parâmetros de requisição: 
 - `tipo`: string com o tipo de peça a ser procurado. É um parâmetro de busca e, como tal, deve ser enviado pela url. Ex.: `/api/pecas?tipo=fonte`;
-- `props`: array com o id de cada propriedade a ser usada no filtro. Deve ser enviado no body da requisição. Ex.:
+- `props`: array com o id de cada propriedade a ser usada no filtro. Deve ser enviado no body da requisição.
+- `pot`: potência total das peças escolhidas (exceto a fonte).
+- `fontepot`: potência fornecida pela fonte escolhida (0 caso não haja).
+Ex.:
 ```json
 {
+    "pot": 1
+    "fontepot": 10
     "props": [1, 2, 3, 4]
 }
 ```
 Para arrays vazios (caso de um computador vazio)
 ```json
 {
+    "pot": 0,
+    "fontePot": 0,
     "props": []
 }
 ```
@@ -102,6 +109,7 @@ Para arrays vazios (caso de um computador vazio)
             "marca": "exemplo1.1",
             "img": "exemplo/1.2",
             "aval": 4,
+            "pot": 11
             "props": [
                 { 
                     "nome": "prop1ex",
@@ -116,6 +124,7 @@ Para arrays vazios (caso de um computador vazio)
             "marca": "exemplo2.1",
             "img": "exemplo/2.2",
             "aval": 3,
+            "pot": 22,
             "props": [
                 { 
                     "nome": "prop2ex",
