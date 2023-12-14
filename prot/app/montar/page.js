@@ -1,71 +1,75 @@
 'use client'
-import "./styles.css";
-import Select, { components } from "react-select";
-//import logoIMG from "../../assets/logoIMG.webp";
-const logoIMG = "/logoIMG.webp"
 
-const customStyles = {
-  option: (state) => ({
-    backgroundColor: state.isFocused ? "white" : "white",
-    alignItems: "center", // Centralizar a imagem verticalmente
-  }),
-  singleValue: (provided, state) => ({
-    ...provided,
-    display: "flex",
-    alignItems: "center",
-  }),
-  valueContainer: (provided, state) => ({
-    ...provided,
-    display: "flex",
-    alignItems: "center",
-  }),
-};
-
-const option = (props) => {
-  <div {...props} style={{height:"10vh"}}>
-
-    <label className=" text-4xl text-yellow-400">MACARRRRRAO</label>
-  </div>
-}
-
-const testeFormat = ({label, value})=> (<option label={label}/>)
+const logoIMG = "/LOGO.png"
 
 const memory = [
   {
-    name: "FURY - MEMÓRIA RAM 8GB",
-    description: "ESSA MEMÓRIA POSSUI 8GB RAM",
-    image: "/memoria-ram.jpg",
+    id: 1,
+    nome: "Fury Beast KF432C16BB/8",
+    marca: "Kingston",
+    img: "/memoria-ram.jpg",
+    props: [
+      {nome: "DDR4"},
+      {nome: "DIMM"},
+    ]
   },
   {
-    name: "XPG - MEMÓRIA RAM 16GB",
-    description: "ESSA MEMÓRIA POSSUI 16GB RAM",
-    image: "/memoria-ram.jpg",
+    id: 2,
+    nome: "Basics CB8GS2666",
+    marca: "Crucial",
+    img: "/memoria-ram.jpg",
+    props: [
+      {nome: "SO-DIMM"},
+      {nome: "DDR4"},
+    ]
   },
   {
-    name: "ASGARD - MEMÓRIA RAM 32GB",
-    description: "ESSA MEMÓRIA POSSUI 32GB RAM",
-    image: "/memoria-ram.jpg",
+    id: 3,
+    nome: "Signature Line PSD58G520041",
+    marca: "Patriot",
+    img: "/memoria-ram.jpg",
+    props: [
+      {nome: "DIMM"},
+      {nome: "DDR5"},
+    ]
   },
 ];
 
-const select = (pecas) => {return (
-  <Select className="select-control" styles={customStyles} options={pecas}
-        formatOptionLabel={option}
-      />
-)}
+const cardHeightVh = 22
 
-const selects = [memory, motherboard, powersupply, processor].map(select)
+const HorizontalCard = ({peca, props={}}) => {
+  return (
+    <div className="flex bg-white rounded-lg shadow-lg" style={{height: `${cardHeightVh}vh`, width: '44vh'}} {...props}>
+      <div style={{width: "30%"}}>
+        <img
+          src={peca.img}
+          alt={`${peca.nome} Image`}
+          className="object-contain h-full w-full"
+        />
+      </div>
+      <div className="p-4 w-2/3">
+        <h2 className="text-2xl font-bold mb-2 text-black">{peca.nome}</h2>
+        <p className="text-gray-600">{peca.props.map((prop)=>prop.nome).join(", ")}</p>
+      </div>
+    </div>
+  );
+};
 
-const teste = [{label: 'teste', value: 'funfa?'},{label: 'teste2', value: 'funfa2?'}, {label: 'teste3', value: 'funfa3?'}]
+const teste = () => alert("teste")
+
+const pecas = (peca) => HorizontalCard({peca, props:{onClick: teste, style:{height:`${cardHeightVh}vh`, width: '66vh', marginLeft: "auto", marginRight: "auto"}}} )
+const memorias = memory.map(pecas)
 
 export default function Build(){
   return (
-    <div className="container">
-      <div className="container-selects mx-auto w-2/3 overflow-auto">
-        <img className="" style={{height: "10vh"}} src={logoIMG} />
-        {select(memory)}
-        <Select className=" w-2/3 h-fit text-2xl" options={teste} components={{SingleValue:option, Option: option}}/>
-        <button>Salvar</button>
+    <div className="bg-gray-800 rounded-lg h-screen mx-auto w-2/3">
+      <div className="flex justify-center">
+        <div className="flex flex-col justify-between" style={{height: `${4*cardHeightVh}vh`}}>
+          <div className="overflow-hidden w-2/3 mx-auto" style={{height: `${cardHeightVh*2/3}vh`}}>
+            <img className="w-full h-auto" src={logoIMG} alt="monte-seu-pc"/>
+          </div>
+          {memorias}
+        </div>
       </div>
     </div>
   );

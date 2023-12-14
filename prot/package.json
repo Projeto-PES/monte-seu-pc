@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/joy": "^5.0.0-beta.18",
     "mariadb": "^3.2.2",
     "next": "14.0.1",
     "react": "^18",
-    "react-dom": "^18",
-    "react-select": "^5.8.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/react": "18.2.45",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
