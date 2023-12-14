@@ -18,6 +18,9 @@ export const Home = () => {
         <button className="home-button" onClick={() => navigate("/build")}>
           Montar PC
         </button>
+        <button className="home-button" onClick={() => navigate("/login")}>
+          Gerenciar Peças
+        </button>
       </div>
     </div>
   );
