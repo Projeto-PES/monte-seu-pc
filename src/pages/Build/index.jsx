@@ -81,16 +81,18 @@ export const Build = () => {
       backgroundColor: state.isFocused ? "white" : "white",
       alignItems: "center", // Centralizar a imagem verticalmente
       width: 550,
+      display: "flex",
     }),
     singleValue: (provided, state) => ({
-      ...provided,
-      display: "flex",
-      alignItems: "center",
+      //...provided,
+      //display: "flex",
+      //alignItems: "center",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
       display: "flex",
       alignItems: "center",
+
     }),
   };
 
@@ -104,7 +106,7 @@ export const Build = () => {
           styles={customStyles}
           options={memory}
           formatOptionLabel={({ name, description, image }) => (
-            <div className="select-control-memory">
+            <div className="select-control-item">
               <img src={image} alt=" " />
               <p>{name}</p>
               <p>{description}</p>
@@ -117,10 +119,12 @@ export const Build = () => {
           styles={customStyles}
           options={motherboard}
           formatOptionLabel={({ name, description, image }) => (
-            <div className="select-control-motherboard">
+            <div className="select-control-item">
               <img src={image} alt=" " />
+              <div>
               <p>{name}</p>
               <p>{description}</p>
+              </div>
             </div>
           )}
           placeholder="PLACA MÃE"
