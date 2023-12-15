@@ -45,7 +45,8 @@ html {
 }
 
 .login-form-title {
-  display: block;
+  display: flex;
+  justify-content: center;
   font-size: 25px;
   color: azure;
 
