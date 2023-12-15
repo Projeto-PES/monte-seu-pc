@@ -11,10 +11,10 @@ async function getPeca(props, pot, fontepot, tipo){
     const maxPot = fontepot>0 ? (fontepot*2/3) - pot : 999999999
     let query = `
     SELECT *, (
-        SELECT CONCAT_WS(",", pecas_prop.prop)
-        FROM pecas_prop
-        WHERE pecas_prop.peca = pecas.id
-    ) AS props
+        SELECT GROUP_CONCAT(pecas_prop.prop) 
+        FROM pecas_prop 
+        where pecas_prop.peca = pecas.id 
+    )AS props
     FROM pecas WHERE pecas.id NOT IN (
         SELECT PECAS_PROP.peca
         FROM PECAS_PROP
@@ -24,7 +24,7 @@ async function getPeca(props, pot, fontepot, tipo){
             WHERE incompat_prop.prop1 IN (${props.join()})
         )
     ) AND pecas.pot < ${maxPot} AND pecas.tipo = "${tipo}";`
-    if (props.length==0){query = `SELECT *, (SELECT CONCAT_WS(",", pecas_prop.prop) FROM pecas_prop WHERE pecas_prop.peca = pecas.id) AS props FROM pecas WHERE pecas.pot < ${maxPot} AND pecas.tipo = "${tipo}";`}
+    if (props.length==0){query = `SELECT *, (SELECT GROUP_CONCAT(pecas_prop.prop) FROM pecas_prop where pecas_prop.peca = pecas.id ) AS props FROM pecas WHERE pecas.pot < ${maxPot} AND pecas.tipo = "${tipo}";`}
     const res = await queryBd(query)
     function formatar(peca){
         peca.props = peca.props || ""
@@ -38,10 +38,10 @@ async function getPeca(props, pot, fontepot, tipo){
 async function getFontes(props, pot){
     let query = `
     SELECT *, (
-        SELECT CONCAT_WS(",", pecas_prop.prop)
-        FROM pecas_prop
-        WHERE pecas_prop.peca = pecas.id
-    ) AS props
+        SELECT GROUP_CONCAT(pecas_prop.prop) 
+        FROM pecas_prop 
+        where pecas_prop.peca = pecas.id 
+    )AS props
     FROM pecas WHERE pecas.id NOT IN (
         SELECT PECAS_PROP.peca
         FROM PECAS_PROP
@@ -50,8 +50,8 @@ async function getFontes(props, pot){
             FROM incompat_prop
             WHERE incompat_prop.prop1 IN (${props.join()})
         )
-    ) AND pecas.pot > ${pot*1.5} AND pecas.tipo = "Processador";`
-    if (props.length==0){query = `SELECT *, (SELECT CONCAT_WS(",", pecas_prop.prop) FROM pecas_prop WHERE pecas_prop.peca = pecas.id) AS props FROM pecas WHERE pecas.pot > ${pot*1.5} AND pecas.tipo = "Processador";`}
+    ) AND pecas.pot > ${pot*1.5} AND pecas.tipo = "Fonte";`
+    if (props.length==0){query = `SELECT *, (SELECT CONCAT_WS(",", pecas_prop.prop) FROM pecas_prop WHERE pecas_prop.peca = pecas.id) AS props FROM pecas WHERE pecas.pot > ${pot*1.5} AND pecas.tipo = "Fonte";`}
     console.log(query)
     const res = await queryBd(query)
     function formatar(peca){
